@@ -1,0 +1,14 @@
+x = 42
+m = 90
+y = hello
+t0 = x + y
+print t0
+print z
+a = 10
+# Class MyClass defined
+t1 = a + b
+return t1
+function myFunc
+  # function body
+endfunction
+x = 100

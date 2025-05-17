@@ -1,0 +1,12 @@
+print "Hello from SimpleLang!"
+function greet:
+endfunction
+a = 10
+b = 20
+t0 = a + b
+c = t0
+t1 = b - a
+d = t1
+print c
+print d
+i = 0
