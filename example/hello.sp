@@ -1,17 +1,8 @@
-def greet() {
-    print("Hello from SimpleLang!")
+a=9
+b=8
+print(a+b)
+if(a<b){
+print(a*b)
+} else {
+print(a*b*a)
 }
-
-a = 10
-b = 20
-c = a + b
-d=b-a
-print(c)
-print(d)
-i = 0
-while (i < 3) {
-    print(i)
-    i = i + 1
-}
-
-greet()

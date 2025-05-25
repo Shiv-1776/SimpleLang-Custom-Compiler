@@ -83,7 +83,8 @@ extern int yydebug;
     RBRACE = 284,                  /* RBRACE  */
     COMMA = 285,                   /* COMMA  */
     NEWLINE = 286,                 /* NEWLINE  */
-    LOWER_THAN_ELSE = 287          /* LOWER_THAN_ELSE  */
+    UMINUS = 287,                  /* UMINUS  */
+    LOWER_THAN_ELSE = 288          /* LOWER_THAN_ELSE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -92,12 +93,12 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 19 "parser.y"
+#line 24 "parser.y"
 
     int    num;
     char  *str;
 
-#line 101 "parser.tab.h"
+#line 102 "parser.tab.h"
 
 };
 typedef union YYSTYPE YYSTYPE;

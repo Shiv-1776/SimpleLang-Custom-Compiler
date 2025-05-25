@@ -1,6 +1,8 @@
 #ifndef ICG_H
 #define ICG_H
 
+#include <stdio.h>
+
 typedef enum {
     INST_ASSIGN,
     INST_BINOP,
@@ -38,19 +40,15 @@ Instruction *create_goto_instruction(const char *label);
 Instruction *create_label_instruction(const char *label);
 Instruction *create_function_instruction(const char *name);
 Instruction *create_endfunction_instruction();
-//Instruction *create_comment_instruction(const char *comment);
+Instruction *create_comment_instruction(const char *fmt, ...);
+Instruction* create_param_instruction(const char *arg1);
 
-void append_instruction(Instruction *instr);
+void add_instruction(Instruction *instr);
+
 char *generate_temp();
 char *generate_label();
 
-void optimize_constant_folding();
-void write_instructions_to_file(FILE *file);
-
 void optimize_instructions(); // for constant folding
-Instruction *create_comment_instruction(const char *fmt, ...);
-void add_instruction(Instruction *instr);
-
-
+void write_instructions_to_file(FILE *file);
 
 #endif

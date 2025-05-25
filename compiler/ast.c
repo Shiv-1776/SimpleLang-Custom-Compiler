@@ -3,6 +3,34 @@
 #include <string.h>
 #include "ast.h"
 
+int label_counter = 0;
+
+char *new_label() {
+    char buf[32];
+    snprintf(buf, sizeof(buf), "L%d", label_counter++);
+    return strdup(buf);  // ensure strdup is declared or include <string.h>
+}
+
+Instruction *create_label_instruction(const char *label_name) {
+    Instruction *inst = malloc(sizeof(Instruction));
+    inst->opcode = strdup("label");
+    inst->arg1 = strdup(label_name);
+    inst->arg2 = NULL;
+    inst->arg3 = NULL;
+    inst->next = NULL;
+    return inst;
+}
+
+Instruction *create_goto_instruction(const char *label_name) {
+    Instruction *inst = malloc(sizeof(Instruction));
+    inst->opcode = strdup("goto");
+    inst->arg1 = strdup(label_name);
+    inst->arg2 = NULL;
+    inst->arg3 = NULL;
+    inst->next = NULL;
+    return inst;
+}
+
 ASTNode *create_number_node(int value) {
     ASTNode *node = malloc(sizeof(ASTNode));
     node->type = NODE_NUMBER;

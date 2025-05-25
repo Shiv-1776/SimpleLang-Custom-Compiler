@@ -1,12 +1,12 @@
-print "Hello from SimpleLang!"
-function greet:
-endfunction
 a = 10
 b = 20
-t0 = a + b
-c = t0
-t1 = b - a
-d = t1
+t0 = a * b
+t1 = t0 + 5
+c = t1
 print c
-print d
-i = 0
+a = 10
+b = 20
+t0 = a * b
+t1 = t0 + 5
+c = t1
+print c
